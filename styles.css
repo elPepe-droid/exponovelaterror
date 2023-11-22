@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Establece una altura mínima del 100% de la altura visible */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    background-image: url('La novela de Terror.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 10em;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: background-image 0.5s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5em;
+    color: #000;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: -1;
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery {
+    display: flex;
+    overflow: hidden;
+    justify-content: center; /* Centra las diapositivas horizontalmente */
+    align-items: center; /* Centra las diapositivas verticalmente */
+    max-width: 80%; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra la galería horizontalmente */
+    position: relative; /* Asegura que las imágenes absolutas se posicionen correctamente */
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen manteniendo su proporción */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, border-radius 0.5s ease-in-out, filter 0.5s ease-in-out;
+    transform-origin: center center;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.gallery img:hover {
+    transform: scale(1.1); /* Aumenta la escala al hacer hover */
+}
+
+.gallery img.active {
+    width: 100%;
+    border-radius: 10px;
+    transform: translateX(0) scale(1);
+}
+
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+
+nav {
+    background-color: #333; /* Fondo oscuro para el nav */
+    padding: 1em;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco para los enlaces del nav */
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto; /* Coloca el footer al final del contenedor flex (body) */
+    transition: opacity 0.5s ease-in-out;
+}
+
+footer:hover{
+    opacity: 0.9;
+}
+
+header a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.page-number {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Estilos para las tablas */
+.table-container {
+    margin: 50px auto;
+    width: 80%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+thead th {
+    color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ecf0f1;
+}
+
+/* Estilos para el título de Contacto */
+section h2 {
+    color: #000;
+}
+
+.controls button {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: #2c3e50; /* Color oscuro para los botones */
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.controls button svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #fff; /* Color blanco para los iconos SVG */
+}
+
+.controls button:nth-child(2) {
+    width: 80px;
+    height: 80px;
+}
+
+.controls button:nth-child(2) svg {
+    width: 32px;
+    height: 32px;
+}
+
+.controls button:hover {
+    background-color: #474747; /* Cambia de color al pasar el ratón sobre los botones */
+}
+
+.controls button:disabled {
+    background-color: #5c5c5c;
+    cursor: not-allowed;
+}
+
+.controls .gallery-button {
+    font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+    padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco para los enlaces del nav */
+    border-radius: 5px; /* Agrega el border-radius deseado */
+    padding: 5px 10px; /* Ajusta el relleno según sea necesario */
+    transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out; /* Agrega transiciones para suavizar el efecto */
+}
+
+nav a:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el ratón sobre los enlaces */
+}
+
+nav a.active {
+    background-color: #fff; /* Fondo blanco para el enlace activo */
+    color: #333; /* Texto oscuro para el enlace activo, ajusta según sea necesario */
+}
+.gallery.fullscreen img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: filter 0.5s ease-in-out;
+}
+
+.gallery.fullscreen img:hover {
+    filter: brightness(100%); /* Ajusta el brillo al hacer hover en pantalla completa */
+}
+header:hover {
+    backdrop-filter: blur(16px);
+}
+header {
+
+}
